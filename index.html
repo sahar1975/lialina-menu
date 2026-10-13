@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lialina Café</title>
-    <!-- Tailwind CSS CDN -->
+    <title>layalina Café</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Cairo & Playfair Display for an elegant cafe feel -->
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome for arrows and icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -47,14 +47,14 @@
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #F7F2E7; /* Vanilla latte background */
+            background-color: #F7F2E7; 
             color: #4A3B32;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
         
-        /* Hide scrollbars for slider container */
+     
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -63,13 +63,12 @@
             scrollbar-width: none;
         }
 
-        /* Smooth slider transition */
+     
         .slider-track {
             display: flex;
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
         
-        /* تنسيق الهيدر العلوي وفصله بمسافة مظبوطة (حوالي نصف سم) */
         header {
             background-color: #fffaf0; 
             padding: 15px 20px;
@@ -78,7 +77,6 @@
             margin-bottom: 18px; 
         }
 
-        /* قسم الهيرو كفر لضمان ظهور الصورة بالحجم الكامل بدون قص */
         .hero-section {
             width: 100%;
             max-width: 600px;
@@ -87,13 +85,13 @@
 
         .hero-section img {
             width: 100%;
-            height: auto; /* الحفاظ على الأبعاد الأصلية والطول الكامل */
+            height: auto; 
             display: block;
-            object-fit: contain; /* منع القص نهائياً */
+            object-fit: contain; 
             border-radius: 12px;
         }
 
-        /* قسم السلايدر ملتصق تحت الهيرو مباشرة بمسافة ضئيلة جداً */
+
         .slider-section {
             margin-top: 4px; 
             width: 100%;
@@ -105,14 +103,13 @@
 </head>
 <body class="bg-vanilla-100 flex flex-col min-h-screen">
 
-    <!-- Simple, elegant header with editable cafe name -->
     <header class="bg-vanilla-50/90 backdrop-blur-md sticky top-0 z-50 border-b border-blush-200 shadow-sm">
         <div class="max-w-2xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-2 space-x-reverse">
                 <span class="w-2.5 h-2.5 rounded-full bg-blush-500 animate-pulse"></span>
-                <!-- CAFE NAME EDITABLE HERE -->
+           
                 <h1 id="cafe-name" class="font-playfair text-xl md:text-2xl font-bold tracking-wide text-latte-dark">
-                    lialina Café
+                    layalina Café
                 </h1>
             </div>
             <div class="text-xs uppercase tracking-widest text-latte font-semibold bg-blush-50 px-3 py-1 rounded-full border border-blush-200">
@@ -121,12 +118,9 @@
         </div>
     </header>
      
-    <!-- Main content wrapper -->
     <main class="w-full max-w-2xl mx-auto flex-grow flex flex-col">
         
-        <!-- Hero cover image right below header with full height uncropped -->
         <section class="hero-section px-3 md:px-0">
-            <!-- HERO COVER IMAGE: Change src to your hero cover image -->
             <img 
                 id="hero-cover-img"
                 src="heroimg.jpeg"
@@ -135,8 +129,6 @@
                 onerror="this.src='https://placehold.co/1200x800/E3D2B4/4A3B32?text=Hero+Cover'"
             >
         </section>
-
-        <!-- 7 Menu Images Slider with Next/Prev Arrows -->
         <section class="slider-section bg-vanilla-50 relative flex flex-col shadow-xl rounded-xl overflow-hidden my-1">
             
             <div class="px-4 py-3 bg-white border-b border-blush-100 flex justify-between items-center">
@@ -149,10 +141,8 @@
                 </div>
             </div>
 
-            <!-- Slider Wrapper -->
             <div class="relative w-full overflow-hidden bg-vanilla-200" id="slider-container">
                 
-                <!-- Navigation Arrows -->
                 <button id="prev-btn" aria-label="السابق" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-latte-dark w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 border border-blush-200 focus:outline-none">
                     <i class="fa-solid fa-chevron-right text-sm"></i>
                 </button>
@@ -161,40 +151,26 @@
                     <i class="fa-solid fa-chevron-left text-sm"></i>
                 </button>
 
-                <!-- Slider Track containing 7 Menu Images -->
                 <div class="slider-track w-full" id="slider-track">
                     
-                    <!-- Menu Image 1 -->
                     <div class="w-full flex-shrink-0 relative">
                         <img src="img1.jpeg" data-fallback="https://placehold.co/800x1200/F7F2E7/A34858?text=Menu+Page+1" alt="Menu Image 1" class="menu-img w-full h-auto block object-contain mx-auto bg-vanilla-100" onerror="handleImageError(this)">
                     </div>
-
-                    <!-- Menu Image 2 -->
                     <div class="w-full flex-shrink-0 relative">
                         <img src="img2.jpeg" data-fallback="https://placehold.co/800x1200/FCE7EB/A34858?text=Menu+Page+2" alt="Menu Image 2" class="menu-img w-full h-auto block object-contain mx-auto bg-vanilla-100" onerror="handleImageError(this)">
                     </div>
-
-                    <!-- Menu Image 3 -->
                     <div class="w-full flex-shrink-0 relative">
                         <img src="img3.jpeg" data-fallback="https://placehold.co/800x1200/F8D1D8/A34858?text=Menu+Page+3" alt="Menu Image 3" class="menu-img w-full h-auto block object-contain mx-auto bg-vanilla-100" onerror="handleImageError(this)">
                     </div>
-
-                    <!-- Menu Image 4 -->
                     <div class="w-full flex-shrink-0 relative">
                         <img src="img4.jpeg" data-fallback="https://placehold.co/800x1200/F2ABB6/4A3B32?text=Menu+Page+4" alt="Menu Image 4" class="menu-img w-full h-auto block object-contain mx-auto bg-vanilla-100" onerror="handleImageError(this)">
                     </div>
-
-                    <!-- Menu Image 5 -->
                     <div class="w-full flex-shrink-0 relative">
                         <img src="img5.jpeg" data-fallback="https://placehold.co/800x1200/EFE5D0/A34858?text=Menu+Page+5" alt="Menu Image 5" class="menu-img w-full h-auto block object-contain mx-auto bg-vanilla-100" onerror="handleImageError(this)">
                     </div>
-
-                    <!-- Menu Image 6 -->
                     <div class="w-full flex-shrink-0 relative">
                         <img src="img6.jpeg" data-fallback="https://placehold.co/800x1200/E3D2B4/4A3B32?text=Menu+Page+6" alt="Menu Image 6" class="menu-img w-full h-auto block object-contain mx-auto bg-vanilla-100" onerror="handleImageError(this)">
                     </div>
-
-                    <!-- Menu Image 7 -->
                     <div class="w-full flex-shrink-0 relative">
                         <img src="img7.jpeg" data-fallback="https://placehold.co/800x1200/FDF2F4/A34858?text=Menu+Page+7" alt="Menu Image 7" class="menu-img w-full h-auto block object-contain mx-auto bg-vanilla-100" onerror="handleImageError(this)">
                     </div>
@@ -202,7 +178,6 @@
                 </div>
             </div>
 
-            <!-- Dots Indicators Bar -->
             <div class="py-3 bg-white border-t border-blush-100 flex justify-center items-center gap-2" id="dots-container">
                 <button class="dot w-2.5 h-2.5 rounded-full bg-blush-300 transition-all duration-200" data-index="0" aria-label="Slide 1"></button>
                 <button class="dot w-2.5 h-2.5 rounded-full bg-blush-200 transition-all duration-200" data-index="1" aria-label="Slide 2"></button>
@@ -215,14 +190,13 @@
 
         </section>
 
-        <!-- Minimalist Footer -->
         <footer class="bg-vanilla-100 text-center py-4 text-xs text-latte-dark/80 border-t border-blush-200 mt-auto">
-            <p>جميع الحقوق محفوظة &copy; <span id="footer-year">2026</span> <span class="font-semibold text-blush-750">eng : sahar reda only for lialina Café</span></p>
+            <p>جميع الحقوق محفوظة &copy; <span id="footer-year">2026</span> <span class="font-semibold text-blush-750">eng : sahar reda only for layalina Café</span></p>
         </footer>
     </main>
 
     <script>
-        // Handle missing local images by falling back to placeholders
+
         function handleImageError(img) {
             const fallback = img.getAttribute('data-fallback');
             if (img.src !== fallback) {
@@ -231,7 +205,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Set current year dynamically
             document.getElementById('footer-year').textContent = new Date().getFullYear();
 
             const track = document.getElementById('slider-track');
@@ -244,12 +217,11 @@
 
             let currentIndex = 0;
 
-            // Update slider position and indicators
+
             function updateSlider() {
                 track.style.transform = `translateX(${currentIndex * 100}%)`; // RTL layout transform
                 currentSlideNum.textContent = currentIndex + 1;
 
-                // Update dots styling
                 dots.forEach((dot, idx) => {
                     if (idx === currentIndex) {
                         dot.classList.remove('bg-blush-200', 'w-2.5');
@@ -274,7 +246,6 @@
             nextBtn.addEventListener('click', nextSlide);
             prevBtn.addEventListener('click', prevSlide);
 
-            // Dot navigation clicks
             dots.forEach((dot, idx) => {
                 dot.addEventListener('click', () => {
                     currentIndex = idx;
@@ -282,7 +253,6 @@
                 });
             });
 
-            // Touch / Swipe support for mobile devices
             let touchStartX = 0;
             let touchEndX = 0;
 
